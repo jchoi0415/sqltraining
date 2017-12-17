@@ -1,0 +1,805 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10400.17.1206.1554                               -->
+<workbook source-build='10.4.2 (10400.17.1206.1554)' source-platform='win' version='10.4' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='productSoldCountByDate' inline='true' name='federated.1qlylek0phao1316aiz4t0uge8hy' version='10.4'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='productSoldCountByDate' name='textscan.11ayixe05vj3xb1c341601yteyea'>
+            <connection class='textscan' directory='C:/Users/iVise User/Documents/SQL Server Management Studio/AdventureWorks' filename='productSoldCountByDate.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.11ayixe05vj3xb1c341601yteyea' name='productSoldCountByDate.csv' table='[productSoldCountByDate#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_NZ' separator=','>
+            <column datatype='integer' name='Year' ordinal='0' />
+            <column datatype='integer' name='Month' ordinal='1' />
+            <column datatype='string' name='Name' ordinal='2' />
+            <column datatype='integer' name='ProductCount' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[productSoldCountByDate.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[productSoldCountByDate.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[productSoldCountByDate.csv]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ProductCount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ProductCount]</local-name>
+            <parent-name>[productSoldCountByDate.csv]</parent-name>
+            <remote-alias>ProductCount</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[productSoldCountByDate.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_NZ&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+      <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Product Count' datatype='integer' name='[ProductCount]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <group name='[Name, Year, Month (Combined)]' name-style='unqualified' user:ui-builder='nest-group'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Year]' />
+          <groupfilter function='level-members' level='[Month]' />
+          <groupfilter function='level-members' level='[Name]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.526627' measure-ordering='alphabetic' measure-percentage='0.473373' show-structure='true' user-set-layout='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;New Zealand&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='productSold' inline='true' name='federated.0gyyid81ru4byr1c33vkr112a8in' version='10.4'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='productSold' name='textscan.1ilfndf00e93i619r0dqd0828kd6'>
+            <connection class='textscan' directory='C:/Users/iVise User/Documents/SQL Server Management Studio/AdventureWorks' filename='productSold.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1ilfndf00e93i619r0dqd0828kd6' name='productSold.csv' table='[productSold#csv]' type='table'>
+          <columns character-set='windows-1252' header='yes' locale='en_NZ' separator='&#9;'>
+            <column datatype='integer' name='SalesOrderID' ordinal='0' />
+            <column datatype='string' name='CustomerName' ordinal='1' />
+            <column datatype='string' name='ProductName' ordinal='2' />
+            <column datatype='integer' name='StoreID' ordinal='3' />
+            <column datatype='integer' name='PersonID' ordinal='4' />
+            <column datatype='string' name='SalesPerson' ordinal='5' />
+            <column datatype='string' name='SalesPersonRole' ordinal='6' />
+            <column datatype='integer' name='OrderQty' ordinal='7' />
+            <column datatype='real' name='UnitPrice' ordinal='8' />
+            <column datatype='real' name='TotalPrice' ordinal='9' />
+            <column datatype='date' name='OrderDate' ordinal='10' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>SalesOrderID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SalesOrderID]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>SalesOrderID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CustomerName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CustomerName]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>CustomerName</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ProductName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ProductName]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>ProductName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StoreID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[StoreID]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>StoreID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PersonID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PersonID]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>PersonID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SalesPerson</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SalesPerson]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>SalesPerson</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SalesPersonRole</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SalesPersonRole]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>SalesPersonRole</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OrderQty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OrderQty]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>OrderQty</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UnitPrice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[UnitPrice]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>UnitPrice</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotalPrice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TotalPrice]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>TotalPrice</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OrderDate</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[OrderDate]</local-name>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias>OrderDate</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;date&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[productSold.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;windows-1252&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_NZ&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Customer Name' datatype='string' name='[CustomerName]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Order Date' datatype='date' name='[OrderDate]' role='dimension' type='ordinal' />
+      <column caption='Order Qty' datatype='integer' name='[OrderQty]' role='measure' type='quantitative' />
+      <column caption='Person ID' datatype='integer' name='[PersonID]' role='dimension' type='ordinal' />
+      <column caption='Product Name' datatype='string' name='[ProductName]' role='dimension' type='nominal' />
+      <column caption='Sales Order ID' datatype='integer' name='[SalesOrderID]' role='dimension' type='ordinal' />
+      <column caption='Sales Person Role' datatype='string' name='[SalesPersonRole]' role='dimension' type='nominal' />
+      <column caption='Sales Person' datatype='string' name='[SalesPerson]' role='dimension' type='nominal' />
+      <column caption='Store ID' datatype='integer' name='[StoreID]' role='dimension' type='ordinal' />
+      <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+      <column caption='Unit Price' datatype='real' name='[UnitPrice]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.576923' measure-ordering='alphabetic' measure-percentage='0.423077' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;New Zealand&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='productSoldCount' inline='true' name='federated.16yovwr1wh719s1epiaj901soj3m' version='10.4'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='productSoldCount' name='textscan.13bsitg15pvavt1297dsy1lqfs71'>
+            <connection class='textclean' cleaning='yes' compat='no' csvFile='C:\Users\iVise User\Documents\SQL Server Management Studio\AdventureWorks\productSoldCount.csv' dataRefreshTime='' directory='C:/Users/iVise User/Documents/SQL Server Management Studio/AdventureWorks' filename='C:/Users/IVISEU~1/AppData/Local/Temp/TableauTemp/1meystm15znv8016j9sn710lvnpx/productSoldCount.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.13bsitg15pvavt1297dsy1lqfs71' name='productSoldCount.csv' table='[productSoldCount#csv$]' type='table'>
+          <columns character-set='UTF-8' gridOrigin='A1:C269:no:A1:C269:2' header='yes' locale='en_NZ' separator=','>
+            <column datatype='string' name='Name Name' ordinal='0' />
+            <column datatype='integer' name='ProductID' ordinal='1' />
+            <column datatype='integer' name='ProductCount' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[productSoldCount.csv]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RNZ_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ProductID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ProductID]</local-name>
+            <parent-name>[productSoldCount.csv]</parent-name>
+            <remote-alias>ProductID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ProductCount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ProductCount]</local-name>
+            <parent-name>[productSoldCount.csv]</parent-name>
+            <remote-alias>ProductCount</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[productSoldCount.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C268:no:A1:C268:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>533</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Name]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='%null%' value='Total Count' />
+        </aliases>
+      </column>
+      <column caption='Product Count' datatype='integer' name='[ProductCount]' role='measure' type='quantitative' />
+      <column caption='Product ID' datatype='integer' hidden='true' name='[ProductID]' role='dimension' type='ordinal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.501479' measure-ordering='alphabetic' measure-percentage='0.498521' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;New Zealand&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='OrderDetails'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='productSold' name='federated.0gyyid81ru4byr1c33vkr112a8in' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gyyid81ru4byr1c33vkr112a8in'>
+            <column caption='Customer Name' datatype='string' name='[CustomerName]' role='dimension' type='nominal' />
+            <column caption='Order Date' datatype='date' name='[OrderDate]' role='dimension' type='ordinal' />
+            <column caption='Order Qty' datatype='integer' name='[OrderQty]' role='measure' type='quantitative' />
+            <column caption='Product Name' datatype='string' name='[ProductName]' role='dimension' type='nominal' />
+            <column caption='Sales Person Role' datatype='string' name='[SalesPersonRole]' role='dimension' type='nominal' />
+            <column caption='Sales Person' datatype='string' name='[SalesPerson]' role='dimension' type='nominal' />
+            <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+            <column caption='Unit Price' datatype='real' name='[UnitPrice]' role='measure' type='quantitative' />
+            <column-instance column='[OrderDate]' derivation='MY' name='[my:OrderDate:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CustomerName]' derivation='None' name='[none:CustomerName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ProductName]' derivation='None' name='[none:ProductName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SalesPerson]' derivation='None' name='[none:SalesPerson:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SalesPersonRole]' derivation='None' name='[none:SalesPersonRole:nk]' pivot='key' type='nominal' />
+            <column-instance column='[OrderQty]' derivation='Sum' name='[sum:OrderQty:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TotalPrice]' derivation='Sum' name='[sum:TotalPrice:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[UnitPrice]' derivation='Sum' name='[sum:UnitPrice:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0gyyid81ru4byr1c33vkr112a8in].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0gyyid81ru4byr1c33vkr112a8in].[sum:OrderQty:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0gyyid81ru4byr1c33vkr112a8in].[sum:UnitPrice:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0gyyid81ru4byr1c33vkr112a8in].[sum:TotalPrice:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='manual' column='[federated.0gyyid81ru4byr1c33vkr112a8in].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0gyyid81ru4byr1c33vkr112a8in].[sum:OrderQty:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0gyyid81ru4byr1c33vkr112a8in].[sum:UnitPrice:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0gyyid81ru4byr1c33vkr112a8in].[sum:TotalPrice:qk]&quot;</bucket>
+            </dictionary>
+          </sort>
+          <sort class='alphabetic' column='[federated.0gyyid81ru4byr1c33vkr112a8in].[none:CustomerName:nk]' direction='ASC' />
+          <slices>
+            <column>[federated.0gyyid81ru4byr1c33vkr112a8in].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='133' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0gyyid81ru4byr1c33vkr112a8in].[none:SalesPersonRole:nk]' value='236' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0gyyid81ru4byr1c33vkr112a8in].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0gyyid81ru4byr1c33vkr112a8in].[none:CustomerName:nk] / ([federated.0gyyid81ru4byr1c33vkr112a8in].[my:OrderDate:ok] / ([federated.0gyyid81ru4byr1c33vkr112a8in].[none:ProductName:nk] / ([federated.0gyyid81ru4byr1c33vkr112a8in].[none:SalesPerson:nk] / [federated.0gyyid81ru4byr1c33vkr112a8in].[none:SalesPersonRole:nk]))))</rows>
+        <cols>[federated.0gyyid81ru4byr1c33vkr112a8in].[:Measure Names]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='ProductsSoldByMonth'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='productSoldCountByDate' name='federated.1qlylek0phao1316aiz4t0uge8hy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1qlylek0phao1316aiz4t0uge8hy'>
+            <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+            <column caption='Product Count' datatype='integer' name='[ProductCount]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Month]' derivation='None' name='[none:Month:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[ProductCount]' derivation='Sum' name='[sum:ProductCount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='computed' column='[federated.1qlylek0phao1316aiz4t0uge8hy].[Name, Year, Month (Combined)]' direction='DESC' using='[federated.1qlylek0phao1316aiz4t0uge8hy].[sum:ProductCount:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1qlylek0phao1316aiz4t0uge8hy].[Name, Year, Month (Combined)]' value='340' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1qlylek0phao1316aiz4t0uge8hy].[none:Year:ok] / ([federated.1qlylek0phao1316aiz4t0uge8hy].[none:Month:ok] / [federated.1qlylek0phao1316aiz4t0uge8hy].[Name, Year, Month (Combined)]))</rows>
+        <cols>[federated.1qlylek0phao1316aiz4t0uge8hy].[sum:ProductCount:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='ProductsSoldByYear'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='productSoldCountByDate' name='federated.1qlylek0phao1316aiz4t0uge8hy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1qlylek0phao1316aiz4t0uge8hy'>
+            <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+            <column caption='Product Count' datatype='integer' name='[ProductCount]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[ProductCount]' derivation='Sum' name='[sum:ProductCount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='computed' column='[federated.1qlylek0phao1316aiz4t0uge8hy].[Name, Year, Month (Combined)]' direction='DESC' using='[federated.1qlylek0phao1316aiz4t0uge8hy].[sum:ProductCount:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1qlylek0phao1316aiz4t0uge8hy].[Name, Year, Month (Combined)]' value='320' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.1qlylek0phao1316aiz4t0uge8hy].[none:Year:ok] / [federated.1qlylek0phao1316aiz4t0uge8hy].[Name, Year, Month (Combined)])</rows>
+        <cols>[federated.1qlylek0phao1316aiz4t0uge8hy].[sum:ProductCount:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='SoldProductCount'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='productSoldCount' name='federated.16yovwr1wh719s1epiaj901soj3m' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16yovwr1wh719s1epiaj901soj3m'>
+            <column datatype='string' name='[Name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Total Count' />
+              </aliases>
+            </column>
+            <column caption='Product Count' datatype='integer' name='[ProductCount]' role='measure' type='quantitative' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ProductCount]' derivation='Sum' name='[sum:ProductCount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16yovwr1wh719s1epiaj901soj3m].[none:Name:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Name:nk]' />
+              <groupfilter function='member' level='[none:Name:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[federated.16yovwr1wh719s1epiaj901soj3m].[none:Name:nk]' direction='DESC' using='[federated.16yovwr1wh719s1epiaj901soj3m].[sum:ProductCount:qk]' />
+          <slices>
+            <column>[federated.16yovwr1wh719s1epiaj901soj3m].[none:Name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.16yovwr1wh719s1epiaj901soj3m].[none:Name:nk]' value='244' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.16yovwr1wh719s1epiaj901soj3m].[sum:ProductCount:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.16yovwr1wh719s1epiaj901soj3m].[none:Name:nk]</rows>
+        <cols>[federated.16yovwr1wh719s1epiaj901soj3m].[sum:ProductCount:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Final Dash'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones use-insets='false'>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='49000' id='1' name='OrderDetails' w='98400' x='800' y='1000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='49000' id='3' name='SoldProductCount' w='98400' x='800' y='50000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='89'>
+    <window class='dashboard' name='Final Dash'>
+      <viewpoints>
+        <viewpoint name='OrderDetails' />
+        <viewpoint name='SoldProductCount' />
+      </viewpoints>
+      <active id='-1' />
+    </window>
+    <window class='worksheet' name='OrderDetails'>
+      <cards>
+        <edge name='left'>
+          <strip size='250'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='47'>
+            <card type='columns' />
+          </strip>
+          <strip size='47'>
+            <card type='rows' />
+          </strip>
+          <strip size='47'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' maximized='true' name='SoldProductCount'>
+      <cards>
+        <edge name='left'>
+          <strip size='312'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='47'>
+            <card type='columns' />
+          </strip>
+          <strip size='47'>
+            <card type='rows' />
+          </strip>
+          <strip size='47'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='ProductsSoldByMonth'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='ProductsSoldByYear'>
+      <cards>
+        <edge name='left'>
+          <strip size='200'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+</workbook>
