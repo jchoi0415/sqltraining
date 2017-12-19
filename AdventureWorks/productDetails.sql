@@ -1,7 +1,8 @@
 CREATE VIEW Sales.vProductsSold AS
-(SELECT soh.SalesOrderID, per2.FirstName + ' ' + per2.LastName AS CustomerName, p.Name AS ProductName,
+(SELECT soh.SalesOrderID, per2.FirstName + ' ' + per2.LastName AS CustomerName, p.Name AS ProductName, p.ProductID,
 		c.StoreID, c.PersonID, per.FirstName + ' ' + per.LastName AS SalesPerson, e.JobTitle AS SalesPersonRole,
-		sod.OrderQty, sod.UnitPrice, sod.LineTotal AS TotalPrice, soh.OrderDate
+		sod.OrderQty, sod.UnitPrice, sod.LineTotal AS TotalPrice, p.StandardCost, sod.LineTotal - (p.StandardCost * sod.OrderQty) AS Profit,
+		YEAR(soh.OrderDate) AS [Year], MONTH(soh.OrderDate) AS [Month]
 FROM Sales.SalesOrderHeader as soh
 INNER JOIN Sales.SalesOrderDetail as sod
 ON soh.SalesOrderID = sod.SalesOrderID
