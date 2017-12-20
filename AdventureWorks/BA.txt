@@ -1,0 +1,36 @@
+Business Analyst
+
+1. Gathers requirements
+	Understand the business
+	Gather information to find out what the client wants
+		Features
+		Budget
+		Timeframe
+		Resources
+		Limitation
+		Risk Management
+	Being critical on all the features and the methodologies and technology used
+	
+2. Process Management
+	Step by step procedures of the start to end
+	Impacts of possible risks and black swans
+	Testing existing or new methodologies
+
+3. Report Writing
+	Talking about the whole project start to finish
+	Better the report = Easier to use parts of it for future projects with similar foundations and technologies
+	Must be able to justify all the sentences in the report (All the statements need to be backed up by evidence: Data or experienced people etc)
+
+4. Waterfall vs Agile
+	Looking into budget to find the best procedures fitting for the project
+	Waterfall
+		Requirements
+		Change management
+		Not so flexible
+	Agile
+		User stories for agile methodologies
+		Prioritising the workload / features
+		Scrum and Kanban
+		
+Average BAs will just write down what the clients exactly want, whereas good BAs will understand 
+what the customer wants make take that extra step towards the optimal solution for the problem
