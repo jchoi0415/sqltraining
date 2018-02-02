@@ -1,0 +1,32 @@
+Databases -> Restore database -> backup files (FULL backup database before using it)
+External tables -> external unrelational data e.g. csv etc 
+Temporal tables - Have a look at but pretty new at the moment
+Three part name = Database + schema + table (Don't really need database part if working within it)
+dbo - default schema
+Always look at it from a business POV - understand the business behind the database and find out which is which
+Keys within multiple tables might have different column key names so beware
+PK - Primary Key = key to that particular table
+FK - Foreign Key = Connecting other foreign tables from different schemas by validating that key to another table's PK
+This contrains people using the database work in a specific way eg. entering customer details before you put an order to the person (DATA QUALITY ASSURANCE)
+Validates the FK everytime = affects the server's performance
+SAP - ERP System - Old tables might not give you all the relevant key data/connections between tables etc.
+char = uses up all the limit AND varchar = only uses the number of characters it needs AND nvarchar = useful for multiple languages / flexible
+One clustered index in each table - e.g. SalesOrderID, Date etc (This is used so it is easier to use search for values with a clustered index)
+You can have as many non-clustered index you want in a table - Still a better way to use queries on unclustered indexes as it doesn't read the entire row by row
+Script view/views to look at query to make more sense of the database
+Views = New table that has been made by multiple tables' data columns to be exported for more working on or creating data reports etc.
+Stored procedures will be used a lot for Data Extraction (Any piece of code that you would run more than once)
+
+Finish these:
+
+1. Microsoft Virtual Academy
+	a. Querying with transact-SQL
+	b. SQL Database fundamental
+	
+2. Power BI - EDX
+	a. Analyzing and visualizing data with Power BI
+	
+Assessment using AdventureWorks DB:
+1. What is being sold, who is buying it, and who is selling it (sales people)
+2. Implying, when things are happening, is this year better than last year, who sold how much in each month etc.
+Maybe use some custom visuals etc to have some graphs and visuals to answer the questions above
